@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+
+{% block title %}{{post.Title}}{% endblock title %}
+
+
+{% block body %}
+<div class="row">
+    <div class="col col-2"></div>
+    <div class="col text-center">
+        <div></div>
+        <h2>{{post.Title}}</h2>
+        <p>{{post.content}}</p>
+        <div><small>posted at {{post.created_at}}</small></div>
+        <hr>
+        <a href="{% url 'blog-index' %}">back ...</a>
+    </div>
+    <div class="col col-2"></div>
+    
+</div>
+{% endblock body %}
+
+
+{% block footer %}
+    
+{% endblock footer %}
+    

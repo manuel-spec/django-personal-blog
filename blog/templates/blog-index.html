@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block title %}Blogs by far :-Here{% endblock title %}
+
+{% block body %}
+{% for blog in blogs %}
+<div class="row"></div>
+<div class="row">
+    <div class="col col-2"></div>
+    <div class="col text-center">
+        {% if blog %}
+            <p>no blog yet !!....</p>
+        {% endif %}
+        <div></div>
+        <a href="{% url 'detail-view' blog.id %}"><h2>{{blog.Title}}</h2></a>
+        <p>{{blog.content}}</p>
+        <div><small>posted at {{blog.created_at}}</small></div>
+        <form action="{% url 'delete-view' blog.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="delete" class="btn btn-secondary">
+        </form>
+        <hr>
+    </div>
+    <div class="col col-2"></div>
+</div>
+{% endfor %}
+    
+{% endblock body %}

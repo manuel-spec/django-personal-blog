@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block title %}HomePage -here{% endblock title %}
+    
+{% block body %}
+<section class="highlight-clean">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Highlight</h2>
+            <p class="text-center">A Blog is a website to Share views contents and other things in web based content</p>
+        </div>
+        <div class="buttons"><a class="btn btn-light" href="{% url 'blog-index' %}">Blog Posts</a></div>
+    </div>
+</section>
+{% endblock body %}
+    

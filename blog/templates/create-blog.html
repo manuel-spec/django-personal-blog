@@ -1,0 +1,27 @@
+{% extends '_base.html' %}
+
+
+{% block title %}Create Blog -Here{% endblock title %}
+
+{% block body %}
+    <div class="row">
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form class="mt-5" action="{% url 'create-post' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <label class="form-label">Title:</label>
+                    <input class="form-control form-control" type="text" name="title">
+                    <label class="form-label">Content:</label>
+                    <textarea class="form-control form-control" name="content"></textarea>
+                    <button class="btn btn-primary m-3" type="submit">Post</button>
+                </div>
+            </form>
+            <p>{{err}}</p>
+        </div>
+        <div class="col"></div>
+    </div>
+{% endblock body %}

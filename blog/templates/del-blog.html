@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+
+{% block title %}Blogs by far :-Here{% endblock title %}
+
+{% block body %}
+
+<div class="row"></div>
+<div class="row">
+    <div class="col col-2"></div>
+    <div class="col text-center">
+        <div></div>
+        <h2>delete - {{blog.Title}}</h2>
+
+        <p>You Sure ?</p>
+        <form action="{% url 'delPostNow' blog.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="delete" class="btn btn-danger">
+        </form>
+    </div>
+    <div class="col col-2"></div>
+</div>
+    
+{% endblock body %}
+
+
+{% block footer %}{% endblock footer %}
